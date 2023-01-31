@@ -20,5 +20,32 @@ hr {
 
 h1 {
   font-size: 3rem;
-  color: #212529
+  color: white;
+}
+
+.buffer {
+  height: 10rem;
+}
+
+.btn {
+  font-weight: 700;
+  border-radius: 300px;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background-color: #F05F44;
+  border-color: #F05F44;
+  --bs-btn-hover-bg: #ee4b08;	
+  --bs-btn-hover-border-color: #ee4b08;
+}
+
+.btn-primary:hover {
+  background-color: #EE4B08;
+  border-color: #EE4B08;
+  border-width: 4px;
+}
+
+.btn-x1 {
+  padding: 1rem 2rem;
 }
