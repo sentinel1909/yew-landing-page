@@ -13,7 +13,7 @@ fn app() -> Html {
                 <div class={classes!("buffer", "col-12")}></div>
                     <section class={classes!("text-center", "col-12")}>
                         <hr />
-                        <button class={classes!("btn", "btn-primary", "btn-x1")}>{ "Find out more" }</button>
+                    <a href={"https://mailchi.mp/8c5731448ce5/zero-to-mastery"}><button class={classes!("btn", "btn-primary", "btn-x1")}>{ "Find out more" }</button></a>
                     </section>
             </div>
         </div>
