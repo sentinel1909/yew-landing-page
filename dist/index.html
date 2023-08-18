@@ -14,12 +14,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">    <!-- My own stylesheet -->
     <!-- Header image -->
     
-    <link rel="stylesheet" href="/style-8aa8774d7dcc4b06.css">
+    <link rel="stylesheet" href="/style-348421553cfd2c83.css">
   
-<link rel="preload" href="/yew-landing-page-1894fb8701f55e30_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/yew-landing-page-1894fb8701f55e30.js"></head>
+<link rel="preload" href="/yew-landing-page-cf4de6a2f162ba16_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/yew-landing-page-cf4de6a2f162ba16.js"></head>
   <body>
     
   
 
-<script type="module">import init from '/yew-landing-page-1894fb8701f55e30.js';init('/yew-landing-page-1894fb8701f55e30_bg.wasm');</script></body></html>
+<script type="module">import init from '/yew-landing-page-cf4de6a2f162ba16.js';init('/yew-landing-page-cf4de6a2f162ba16_bg.wasm');</script><script>(function () {
+    var protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    var url = protocol + '//' + window.location.host + '/_trunk/ws';
+    var poll_interval = 5000;
+    var reload_upon_connect = () => {
+        window.setTimeout(
+            () => {
+                // when we successfully reconnect, we'll force a
+                // reload (since we presumably lost connection to
+                // trunk due to it being killed, so it will have
+                // rebuilt on restart)
+                var ws = new WebSocket(url);
+                ws.onopen = () => window.location.reload();
+                ws.onclose = reload_upon_connect;
+            },
+            poll_interval);
+    };
+
+    var ws = new WebSocket(url);
+    ws.onmessage = (ev) => {
+        const msg = JSON.parse(ev.data);
+        if (msg.reload) {
+            window.location.reload();
+        }
+    };
+    ws.onclose = reload_upon_connect;
+})()
+</script></body></html>
